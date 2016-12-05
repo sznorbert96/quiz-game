@@ -16,12 +16,46 @@
 # To help you get started, we've provided a sample paragraph that you can use when testing your code.
 # Your game should consist of 3 or more levels, so you should add your own paragraphs as well!
 
-sample = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
+hard = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
 don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
 tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
+hard_answer = ["function","variables","none","list"]
 
 # The answer for ___1___ is 'function'. Can you figure out the others?
+# The answer for ___2___ is "variables".
+# The answer for ___3___ is "None"
+# The answer for ___4___ is "List"
+
+easy = ''' The ___1___ variable can't be add to the variable "str" ,because before that we need to transform it to "str" too.'''
+easy_answer = ["int"]
+
+medium = ''' The ___1___'s element can be any type of ___2___.'''
+medium_answer = ["list","variable"]
+
+def ask(question,answer):
+	print question
+	for x in range(len(answer)):
+		guess = raw_input("Guess what can be the ___"+str(x+1)+"___?: ")
+		if answer[x] in guess:
+			print("Correct")
+		else:
+			print("Uncorrect")
+		
+	
+	
+
+def start_game():
+diff = raw_input("Select the game difficulty (easy, medium, hard): ")
+	correct = False
+	if diff == "easy":
+		ask(easy,easy_answer)
+	correct = False
+	if diff == "medium":
+		ask(medium, medium_answer)
+	if diff == "hard":
+		ask(hard, hard_answer)
+
 
 # We've also given you a file called fill-in-the-blanks.pyc which is a working version of the project.
 # A .pyc file is a Python file that has been translated into "byte code".
