@@ -27,13 +27,14 @@ hard_answer = ["function","variables","none","list"]
 # The answer for ___3___ is "None"
 # The answer for ___4___ is "List"
 
-easy = ''' The ___1___ variable can't be add to the variable "str" ,because before that we need to transform it to "str" too.'''
-easy_answer = ["int"]
+easy = ''' The ___1___ variable can't be add to the ___2___ "str" ,because before that we need to ___3___  it from "int" to "str". If we want to print out four stars like this "****" we can use this formula: an "str" variable like "*" ___4___ by an "int" variable like "4".'''
+easy_answer = ["int","variable","transform","multiply"]
 
-medium = ''' The ___1___'s element can be any type of ___2___.'''
-medium_answer = ["list","variable"]
+medium = '''In a ___1___ you can store multiple elements in order, and it  can be any type of ___2___. The ___3___ start from 0. You can set the list's elemnts to another ___4___'''
+medium_answer = ["list","variable","indexes","list"]
 
 def ask(question,answer):
+'''This procedure takes 2 inputs (the sentense, and the correct answers) depends on what is the diff's value in "def start_game"'''
 	print(question)
 	for x in range(len(answer)):
 		guess =""
@@ -43,11 +44,9 @@ def ask(question,answer):
 				print("Correct")
 			else:
 				print("Uncorrect")
-		
-	
-	
 
 def start_game():
+''' This procedure has no input, it just take a raw_input ,then depends on this value calls the "ask" function'''
 	diff = raw_input("Select the game difficulty (easy, medium, hard): ")
 	correct = False
 	if diff == "easy":
@@ -58,10 +57,7 @@ def start_game():
 	if diff == "hard":
 		ask(hard, hard_answer)
 
-
 start_game()
-
-
 # We've also given you a file called fill-in-the-blanks.pyc which is a working version of the project.
 # A .pyc file is a Python file that has been translated into "byte code".
 # This means the code will run the same as the original .py file, but when you open it
