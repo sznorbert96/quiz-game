@@ -34,19 +34,21 @@ medium = ''' The ___1___'s element can be any type of ___2___.'''
 medium_answer = ["list","variable"]
 
 def ask(question,answer):
-	print question
+	print(question)
 	for x in range(len(answer)):
-		guess = raw_input("Guess what can be the ___"+str(x+1)+"___?: ")
-		if answer[x] in guess:
-			print("Correct")
-		else:
-			print("Uncorrect")
+		guess =""
+		while not answer[x] in guess:
+			guess = raw_input("Guess what can be the ___"+str(x+1)+"___?: ")
+			if answer[x] in guess:
+				print("Correct")
+			else:
+				print("Uncorrect")
 		
 	
 	
 
 def start_game():
-diff = raw_input("Select the game difficulty (easy, medium, hard): ")
+	diff = raw_input("Select the game difficulty (easy, medium, hard): ")
 	correct = False
 	if diff == "easy":
 		ask(easy,easy_answer)
@@ -55,6 +57,9 @@ diff = raw_input("Select the game difficulty (easy, medium, hard): ")
 		ask(medium, medium_answer)
 	if diff == "hard":
 		ask(hard, hard_answer)
+
+
+start_game()
 
 
 # We've also given you a file called fill-in-the-blanks.pyc which is a working version of the project.
